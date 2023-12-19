@@ -205,18 +205,170 @@ console.log('helloo there');
 // ----------------------------------------------------
 
 // objects in js -> variables which are linked with each other in some form, then an entity combining those, that entity is called object. every object has a property and its own behavior.
-console.log('let us start');
+// console.log('let us start');
 
-const rect = {
-    length: 1,
-    breadth: 2,
+// let rect = {
+//     length: 1,
+//     breadth: 2,
 
-    draw: function(){
-        console.log('rectangle drawn');
-    }
-};
+//     draw: function(){
+//         console.log('rectangle drawn');
+//     }
+// };
 
 // now if we want to create multiple rectangle objects, so we cannot go and copy paste the object again and again. rather we can create a function, which can be called multiple times, every time when we need to create an object.
 // we have two ways of object creation:
 // 1. factory function
 // 2. constructor function
+
+// // factory funciton
+// function createRect(){
+//     return rect = {
+//         length: 1,
+//         breadth: 2,
+    
+//         // draw: function(){
+//         //     console.log('rectangle drawn');
+//         // }
+
+//         // above draw function can also be written as
+//         draw(){
+//             console.log('rectangle drawn');
+//         }
+//     };
+
+//     // return rect;
+// }
+
+// let rectObj1 = createRect();
+// // console.log(rectObj1);
+// rectObj1.draw();
+// console.log(rectObj1.length);
+// console.log(rectObj1.breadth);
+
+// now in order to get the dynamic values instead of already defining the values in the object, we can pass the parameters in the object creation function
+// factory funciton
+// function createRect(l, b){
+//     return rect = {
+//         // length: length,
+//         // breadth: breadth,
+
+//         // the above variables/properties can also be written as
+//         // length,
+//         // breadth,
+
+//         // or we can also change the names of the parameters passed
+//         length: l,
+//         breadth: b,
+    
+//         // draw: function(){
+//         //     console.log('rectangle drawn');
+//         // }
+
+//         // above draw function can also be written as
+//         draw(){
+//             console.log('rectangle drawn');
+//         }
+//     };
+
+//     // return rect;
+// }
+// let rectObj1 = createRect(5,4);
+// let rectObj2 = createRect(3,4);
+// let rectObj3 = createRect(7,8);
+// console.log(rectObj1.length);
+// console.log(rectObj1.breadth);
+
+
+// constructor function
+// here we follow Pascal Notation - this means, first letter of every word is capital -> NumberOfStudents
+// function Rectangle(){
+//     // jis bhi current object pr hm kaam kr rhe hain, usko hm 'this' keyword se represent kr skte hain
+//     this.length = 1;
+//     this.breadth = 2;
+//     this.draw = function(){
+//         console.log("drawing");
+//     }
+// }
+
+// // object cration using constructor function
+// let rectObj = new Rectangle();
+// rectObj.draw();
+
+// this constructor function can also take parameters
+
+
+// -----------------------------------
+
+// dynamic nature of objects
+// function Rectangle(){
+//     // jis bhi current object pr hm kaam kr rhe hain, usko hm 'this' keyword se represent kr skte hain
+//     this.length = 1;
+//     this.breadth = 2;
+//     this.draw = function(){
+//         console.log("drawing");
+//     }
+// }
+
+// let rectObj = new Rectangle();
+// rectObj.color = 'red';
+// delete rectObj.color;
+
+
+// constructor property -> every object in JS has a property called constructor, which represents how the obect is created.
+// we can check it out on console. 
+
+// internal working of constructor property
+// function Rectangle(){
+//     // jis bhi current object pr hm kaam kr rhe hain, usko hm 'this' keyword se represent kr skte hain
+//     this.length = 1;
+//     this.breadth = 2;
+//     this.draw = function(){
+//         console.log("drawing");
+//     }
+// }
+
+// // for rectObj (the object we have created) the constructor is Rectangle(), but what for Rectangle? so when we try to see its constructor, f Function() is returned to us in the console, this is implemented internally as below:
+// let rectObj = new Rectangle();
+
+// let Rect = new Function(
+//     'length', 
+//     'breadth', 
+//     `this.length = length;
+//     this.breadth = breadth;
+//     this.draw = function(){
+//         console.log("drawing");
+//     }
+// `);
+
+// let obj = new Rect(4,3);
+// console.log(Rect.prototype);
+
+// functions are objects -> when we tried accessing the properties of function Rect using dot operator, then we saw that there are other different properties (name, length, etc.) and methods (draw, call, bind, apply, etc.) were there. so any entity which has properties and behavior are called as the objects, hence, functions are objects
+
+
+
+// ---------------------------------------------
+// types in js -> primitive or value types (number, string, boolean, undefined, null) and reference or objects (functions, objects, arrays)
+// let a=10;
+// let b=a;
+// a++;
+// console.log(a);
+// console.log(b);
+
+// let a = {
+//     value: 10
+// }
+// let b = a;
+// a.value++;
+// console.log(a.value);
+// console.log(b.value);
+
+// NOTE: Primitives are copied by their value. References are copied by their address/reference.
+
+let a = 10; 
+function inc (a){  //pass by value
+    a++;
+}
+inc(a);
+console.log(a);
