@@ -205,3 +205,18 @@ console.log('helloo there');
 // ----------------------------------------------------
 
 // objects in js -> variables which are linked with each other in some form, then an entity combining those, that entity is called object. every object has a property and its own behavior.
+console.log('let us start');
+
+const rect = {
+    length: 1,
+    breadth: 2,
+
+    draw: function(){
+        console.log('rectangle drawn');
+    }
+};
+
+// now if we want to create multiple rectangle objects, so we cannot go and copy paste the object again and again. rather we can create a function, which can be called multiple times, every time when we need to create an object.
+// we have two ways of object creation:
+// 1. factory function
+// 2. constructor function
