@@ -51,74 +51,74 @@ console.log('helloo there');
 
 // reference types
 // 1. objects - multiple variables linked together forms an object
-let person = {
-    firstName: 'shivani',
-    age: 23
-}
+// let person = {
+//     firstName: 'shivani',
+//     age: 23
+// }
 // dot notation to access variables
-console.log(person.age);
+// console.log(person.age);
 // bracket notation to access variables
-console.log(person['age']);
+// console.log(person['age']);
 
 // 2. arrays - a data structure used to contain a list of items
-let arr = ['pooja','shivani',1, 1.5, true];
+// let arr = ['pooja','shivani',1, 1.5, true];
 // accessing array values
-console.log(arr[3]);
+// console.log(arr[3]);
 // adding a value in array
-arr[5] = 'hi';
-console.log(arr[5]);
+// arr[5] = 'hi';
+// console.log(arr[5]);
 
 // 3. functions - block of code to perform a particular set of instruction for a particular task
 
-let name = 5;
-console.log(name);
+// let name = 5;
+// console.log(name);
 // this identifier name is deprecated because there is window.name available so we can change the names of identifier or look for the quick fixes available, or try any other method.
 
 // operators
 // 1. arithmetic -> +,-,*,/,%, exponential (x**y)
-let a = 4, b = 6;
-console.log(a+b);
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
-console.log(a**b);
+// let a = 4, b = 6;
+// console.log(a+b);
+// console.log(a-b);
+// console.log(a*b);
+// console.log(a/b);
+// console.log(a%b);
+// console.log(a**b);
 
 // pre/post , increment/decrement
 // pre increment -> first increase the value and then use it
-let x = 10;
-console.log(++x); 
+// let x = 10;
+// console.log(++x); 
 
 // post increment -> first use the value and then increase it
-let y = 12;
-console.log(y++);
-console.log(y++);
+// let y = 12;
+// console.log(y++);
+// console.log(y++);
 
 // pre decrement -> first decrease the value and then use the value
-console.log(--x);
+// console.log(--x);
 
 // post decrement -> first use the value then decrease the value
-console.log(y--);
+// console.log(y--);
 
 // testing: output ques
-let p = 5, q = 10;
+// let p = 5, q = 10;
 
-console.log((++p)*(--q));  //54 ->p: 6, q:9
-console.log((p++)*(--q));  //48 -> p: 7, q: 8
-console.log((p++)*(q--));  //56 -> p: 8, q: 7
-console.log((++p)*(q--));  //63 -> p: 9, q: 6
+// console.log((++p)*(--q));  //54 ->p: 6, q:9
+// console.log((p++)*(--q));  //48 -> p: 7, q: 8
+// console.log((p++)*(q--));  //56 -> p: 8, q: 7
+// console.log((++p)*(q--));  //63 -> p: 9, q: 6
 
 // 2. assignment -> equals to sign is used for assignment
 
 // 3. comparison -> >, <, >=, <=, ===, !==
-console.log(2>3);
-console.log(2<3);
-console.log(2>=3);
-console.log(2<=3);
-console.log(3==3);
-console.log(3==='3');
-console.log(3=='3');
-console.log(4!=5);
+// console.log(2>3);
+// console.log(2<3);
+// console.log(2>=3);
+// console.log(2<=3);
+// console.log(3==3);
+// console.log(3==='3');
+// console.log(3=='3');
+// console.log(4!=5);
 
 // 4. bitwise (bitwise AND (&) and bitwise OR (|))
 // 1 -> true and 0 -> false
@@ -130,18 +130,18 @@ console.log(4!=5);
 // truthy values includes everything except falsy values
 
 // among any truthy and falsy value, always truthy will be chosen in case of OR logical operator
-console.log(false || 'shivani')
-console.log(false || 1);
+// console.log(false || 'shivani')
+// console.log(false || 1);
 
 // output for AND operator -> (everytime falsy values are chosen over truthy) 
-console.log(false && 'shivani'); //false
-console.log(undefined && 1); //undefined
-console.log(null && '1'); //null
-console.log(0 && true); //0
+// console.log(false && 'shivani'); //false
+// console.log(undefined && 1); //undefined
+// console.log(null && '1'); //null
+// console.log(0 && true); //0
 
 // 6. ternary operator or conditional operator -> Syntax -> condition ? true_result : false_result;
-let age = 23;
-console.log(age>=18?'yes':'no');
+// let age = 23;
+// console.log(age>=18?'yes':'no');
 
 
 // operator precedence
@@ -158,16 +158,16 @@ console.log(age>=18?'yes':'no');
 
 // }
 
-let marks = 98;
-if(marks >= 90){
-    console.log('a');
-}else if(marks >= 80){
-    console.log('b');
-}else if(marks >= 70){
-    console.log('c');
-}else{
-    console.log('d');
-}
+// let marks = 98;
+// if(marks >= 90){
+//     console.log('a');
+// }else if(marks >= 80){
+//     console.log('b');
+// }else if(marks >= 70){
+//     console.log('c');
+// }else{
+//     console.log('d');
+// }
 
 // 2. switch
 // switch(expression){
@@ -179,18 +179,18 @@ if(marks >= 90){
 //     .
 //     default: code
 // }
-let num = 3;
-switch(num){
-    case 1: console.log('hi');
-    break;
-    case 2: console.log('hey');
-    break;
-    case 3: console.log('hello');
-    break;
-    case 4: console.log('hi there');
-    break;
-    default: console.log('nothing much, continue to code!')
-}
+// let num = 3;
+// switch(num){
+//     case 1: console.log('hi');
+//     break;
+//     case 2: console.log('hey');
+//     break;
+//     case 3: console.log('hello');
+//     break;
+//     case 4: console.log('hi there');
+//     break;
+//     default: console.log('nothing much, continue to code!')
+// }
 
 
 // loops in js
@@ -200,3 +200,8 @@ switch(num){
 // 4. what is an infinite loop?
 // 5. for-in loop
 // 6. for-of loop
+
+
+// ----------------------------------------------------
+
+// objects in js -> variables which are linked with each other in some form, then an entity combining those, that entity is called object. every object has a property and its own behavior.
