@@ -366,9 +366,177 @@ console.log('helloo there');
 
 // NOTE: Primitives are copied by their value. References are copied by their address/reference.
 
-let a = 10; 
-function inc (a){  //pass by value
-    a++;
-}
-inc(a);
-console.log(a);
+// jab bhi primitive pass hoga, to copy banegi variable ki
+// let a = 10; 
+// function inc (a){  //pass by value
+//     a++;
+//     console.log(a);
+// }
+// inc(a);
+// console.log(a);
+
+// now for objects/reference type
+// let b = { value: 13};
+// function incre(b){
+//     b.value++;
+//     console.log(b.value);
+// }
+// incre(b);
+// console.log(b.value);
+
+
+// -----------------------------------
+// for-in loop
+// let rect = {
+//     length: 2,
+//     breadth: 4,
+// };
+
+// for(let key in rect){
+//     // keys are reflected through key variable
+//     // values are reflected through rect[key]
+//     console.log(key, rect[key]);  //bracket notation to access the value of the key
+// }
+
+
+// for-of loop -> can only be applied to iterables (arrays, maps, etc.)
+// let rect = {
+//     length: 2,
+//     breadth: 4,
+// };
+
+// this will give an error, that "rect is not iterable" this means we cannot iterate over objects directly
+// for(let key of rect){
+//     console.log(key);  
+// }
+
+// to deal with this error, we can create an oject array, to make it iterable.
+// for(let key of Object.keys(rect)){
+//     console.log(key);
+// }
+
+// for(let key of Object.entries(rect)){
+//     console.log(key);
+// }
+
+
+// to find out whether a property exists or not in the object, we can do the following
+// let rect = {
+//     length : 2,
+//     breadth : 4
+// }
+
+// if('color' in rect){
+//     console.log('present');
+// }else{
+//     console.log('absent');
+// }
+
+
+
+// ------------------------------------------
+
+// object cloning -> we can clone objects using following three methods
+// 1. iteration
+// 2. assign
+// 3. spread
+
+// iteration cloning
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+// let dest = {};
+
+// for(let key in src){
+//     dest[key] = src[key];
+// }
+
+// ---- example 2 -----
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+// let dest = {};
+
+// for(let key in src){
+//     dest[key] = src[key];
+// }
+// console.log(dest);
+// src.a++;
+// console.log(src);
+// console.log(dest);
+
+
+// assign cloning 
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+// let dest = Object.assign({}, src);
+
+// -----example 2 ------
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+// let src2 = {
+//     val : 8
+// }
+// let dest = Object.assign({}, src, src2);
+// console.log(dest);
+
+
+// spread operator
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+// let dest = {...src};
+
+// ----- example 2 ------
+// let src = {
+//     a: 1,
+//     b: 3,
+//     c: 5,
+//     hi(){
+//         console.log('hello');
+//     }
+// };
+
+// let src2 = { val : 15 }
+// // in below way we can copy the content of objects in the dest object
+// let dest = {...src, ...src2};
+// console.log(dest);
+
+// to copy whole object in the dest object we can do the following
+// let dest1 = {...src, src2};
+// console.log(dest1)
+
+// let dest2 = {src, src2};
+// console.log(dest2);
+
+
+// -------------------------------------
+
+// garbage collection -> it is a tool which helps freeing up the memory space or deallocate the memory of the variables which are no logner in use. it runs in the background, we don't need to use it manually.
