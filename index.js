@@ -1,4 +1,4 @@
-console.log('helloo there');
+// console.log('helloo there');
 
 // redeclaration possible for var keyword
 // var a = 5;
