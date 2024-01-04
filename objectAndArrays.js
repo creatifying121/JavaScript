@@ -147,7 +147,7 @@
 // console.log(nums.indexOf(19));
 
 // // we want to check if a number exists in an array
-// // first way (not a good practice)
+// // first way (bad practice)
 // if(nums.indexOf(6) != -1){
 //     console.log('yes, it is here');
 // }
@@ -155,23 +155,81 @@
 // // second way (good practice)
 // console.log(nums.includes(6));
 
+// // advanced version
+// // syntax: array_name.indexOf(number_you_want_to_search, index_from_which_you_want_to_start_searching);
+// console.log(numbers.indexOf(4, 3));
 
-// arrays of references
-let courses = [
-    {
-        num: 1, naam: 'shivani'
-    },
-    {
-        num: 2, naam: 'purva'
-    }
-]
 
-console.log(courses);
+// // arrays of references
+// let courses = [
+//     {
+//         num: 1, naam: 'shivani'
+//     },
+//     {
+//         num: 2, naam: 'purva'
+//     }
+// ]
 
-// searching elements
-console.log(courses.indexOf({num: 1, naam: 'shivani'}));
-// this gives output as -1, because the object we are passing in the indexOf method is stored at a different place and one mentioned in the array is on another location. hence, indexof cannot find the object of the array. so what to do in that case?
-// also, includes function will not work in this case. because includes and indexOf methods are used for primitives
-// so what is the way to access object from array of objects? we can use CALLBACK FUNCTIONS HERE!
+// console.log(courses);
 
-// how to write CALLBACK FUNCTION 
+// // // searching elements
+// // console.log(courses.indexOf({num: 1, naam: 'shivani'}));
+// // // this gives output as -1, because the object we are passing in the indexOf method is stored at a different place and one mentioned in the array is on another location. hence, indexof cannot find the object of the array. so what to do in that case?
+// // // also, includes function will not work in this case. because includes and indexOf methods are used for primitives
+// // // so what is the way to access object from array of objects? we can use CALLBACK FUNCTIONS HERE!
+
+// // how to write CALLBACK FUNCTION 
+// // the callback function will be written inside a parent function and that parent function is "find()"
+// // syntax : arrayName.find(predicate/callbackFunction(parameter){});
+// // this find function will return the object 
+// let course = courses.find(function(course){
+//     return course.naam == 'purvaa';
+// });
+// console.log(course);
+
+// // writing code from line 185 to 187 using arrow function to increase readability
+// // let course1 = courses.find((course)=>{
+// //     return course.naam == 'shivani';
+// // });
+
+// // code from line 191 to 193 can also be written as
+// let course1 = courses.find(course=>course.naam =='shivani');
+// console.log(course1);
+
+
+// // removing element => end, beginning, middle removal
+// // to remove from end => pop()
+// // to remove from start => shift()
+// // to remove from middle => splice()
+// let arr = [1,2,3,4,5,6,7];
+
+// arr.pop();
+// console.log(arr);
+
+// arr.shift();
+// console.log(arr);
+
+// // syntax : arrayName.splice(index_from_which_deletion_will_start, number_of_elements_to_delete)
+// arr.splice(2, 2);
+// console.log(arr);
+
+
+// // emptying an array
+// let arr = [1,2,3,4,5,6];
+// let arr1 = arr;
+
+// // way 1 (bad practice) : elements will be garbage collected
+// // arr = [];
+// // in the above way the problem is, if we assign the actual array to another variable, then it will not be deleted in memory. for example: let arr1 = arr; so when we print arr, it will be empty but when we print arr1 then it will show us the values from arr assigned to it. and in this way the values aren't actually deleted.
+
+// // way 2 (good practice)
+// // arr.length = 0; => generally this is used
+
+// // we can do it in one more way
+// arr.splice(0, arr.length);
+
+// console.log(arr);
+// console.log(arr1);
+
+
+// -------- combining and slicing arrays ----------------
