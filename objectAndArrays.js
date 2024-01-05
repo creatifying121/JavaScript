@@ -232,4 +232,174 @@
 // console.log(arr1);
 
 
-// -------- combining and slicing arrays ----------------
+// // -------- combining and slicing arrays ----------------
+// let first = [1,2,3];
+// let second = [4,5,6];
+
+// // we can combine arrays using concat method
+// let combined = first.concat(second);
+// console.log(combined);
+
+// // slicing array => this can be done using slice method
+// // syntax: arrayName.slice(starting index, (ending index till you want to slice + 1)) => 1 is added to the ending index to make it inclusive 
+// let sliced = combined.slice(2,4);
+// console.log(sliced);
+
+// // what if we wrote only starting index in the parameter of slice method? => then from starting index till whole lenght of the array the items will be sliced and hence will be printed on console
+// let sliced1 = combined.slice(2);
+// console.log(sliced1);
+
+// // what if we didn't pass any parameter to the slice method => then a whole new copy of the array will be created
+// let sliced2 = combined.slice();
+// console.log(sliced2);
+
+// // ------------- combining array of objects -----------
+// let first = [
+//     {naam: 'shivani', num: 111},
+//     {naam: 'pooja', num: 112}
+// ];
+// let second = [
+//     {naam: 'nayan', num: 555},
+//     {naam: 'purva', num: 444}
+// ];
+
+// let combined = first.concat(second);
+// console.log(combined);
+
+// let sliced = combined.slice(1,3);
+// console.log(sliced);
+
+// // ------------------ spread operator -----------------
+// let first = [1,2,3];
+// let second = [4,5,6];
+
+// let combined = [...first, ...second];
+// console.log(combined);
+
+// // creating copy using spread operator
+// let another = [...combined];
+// console.log(another);
+
+
+// // ------------- iterating an array ----------------------
+// // for-of loop is best for iterables
+// let arr = [10,20,30,40,50];
+
+// for(let value of arr){
+//     console.log(value);
+// }
+
+// // using for-each loop
+// arr.forEach(function(number){
+//     console.log(number);
+// });
+
+// // another way of writing for-each loop using arrow function in the callback
+// arr.forEach(number => console.log(number));
+
+
+
+// // ------------ joining arrays -----------------
+// let arr = [10,20,30,40,50];
+// let joined = arr.join(',');
+// console.log(joined);
+
+// // --------------- splitting a string---------------
+// let msg = 'this is my first msg';
+// let parts = msg.split(' ');
+// console.log(parts);
+// let joinss = parts.join('-');
+// console.log(joinss);
+
+
+// // ---------------- sorting arrays -------------------
+// let arr = [5,10,4,40];
+// arr.sort();
+// // this is not giving the expected output because internally these items are treated as strings, and are sorted accrodingly. so output here will be [10,4,40,5]
+// console.log(arr);
+
+// // to overcome this problem, we write a callback function in such cases, so that values can be compared and sorted as per comparison
+// arr.sort(function(a,b){
+//     return a-b; // sorting in ascending order
+// })
+// console.log(arr);
+
+// // for sorting in descending order
+// arr.sort(function(a,b){
+//     return b-a; 
+// })
+// console.log(arr);
+
+// // ------------ sorting array of objects ---------------
+// let items = [
+//     { name: "Edward", value: 21 },
+//     { name: "Sharpe", value: 37 },
+//     { name: "And", value: 45 },
+//     { name: "The", value: -12 },
+//     { name: "Magnetic", value: 13 },
+//     { name: "Zeros", value: 37 },
+//   ];
+  
+//   // sort by value
+//   items.sort((a, b) => a.value - b.value);
+//   console.log(items);
+  
+//   // sort by name
+//   items.sort((a, b) => {
+//     const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+//     const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+//     if (nameA < nameB) {
+//       return -1;
+//     }
+//     if (nameA > nameB) {
+//       return 1;
+//     }
+  
+//     // names must be equal
+//     return 0;
+//   });
+//   console.log(items);
+
+
+// // -------------- filtering arrays -------------------
+// // syntax : arrayName.filter(callbackFunc());
+// let numbers = [1,2,-1,-4];
+// // filter out only positive values
+// let filtered = numbers.filter(value => value>=0);
+// console.log(filtered);
+
+
+// // ----------------- mapping arrays ---------------------
+// // used to map each element of array with something else, for example, in ASCII system, 'a' is mapped with 97 and so on, so here we use map() method to achieve something of this type
+// let numbers = [7,8,9,10];
+// let mapped = numbers.map(function(value){
+//     return 'student_num' + value;
+// });
+// console.log(mapped);
+
+
+// // -------------- maping with objects --------------------
+// let numbers = [1,2,-1,-4];
+// // filter out only positive values
+// let filtered = numbers.filter(value => value>=0);
+// console.log(filtered); 
+
+// // let items = filtered.map(function(num){
+// //     let obj = {value: num};
+// //     return obj;
+// // });
+
+// // code from line number 387 to 390 can also be written as follows
+// let items = filtered.map((num) => {
+//     return {value: num};
+// });
+
+// console.log(items);
+
+// // here comes an important concept, called as Chaining, it can be written as
+
+// let itemss = numbers.filter(value => value>=0)
+//                     .map((num) => {return {value: num};});
+
+// console.log(itemss);
+
