@@ -53,15 +53,19 @@
 
 // JavaScript has dynamic typing: we do not have to mnually define the data type of the value stored n a variable, instead, data types are determined automatically.
 
-let javascriptIsFun = true;
-console.log(javascriptIsFun);
-console.log(typeof true);
+// let javascriptIsFun = true;
+// console.log(javascriptIsFun);
+// console.log(typeof true);
 
-let year;
-console.log(year); // its output will be undefined because year does not have any value defined in it
-console.log(typeof year); // variable which is undefined, its type is also undefined
+// let year;
+// console.log(year); // its output will be undefined because year does not have any value defined in it
+// console.log(typeof year); // variable which is undefined, its type is also undefined
 
-year = 2000;
-console.log(typeof year); // now this will be a number
+// year = 2000;
+// console.log(typeof year); // now this will be a number
 
-console.log(typeof null); // the type of null should be null, but for some reason, it is a bug in javascript that type of null is "object"
+// console.log(typeof null); // the type of null should be null, but for some reason, it is a bug in javascript that type of null is "object"
+
+// ===========================================================
+
+// let , const and var in javascript
