@@ -95,3 +95,122 @@
 // console.log(typeof country);
 // console.log(typeof population);
 // ===========================================================
+
+// basic operators in javascript
+
+// arithematic operators
+// let age = 2024 - 2000;
+// console.log(age);
+
+// console.log(age * 2, age / 10);
+
+// const firstName = "Shivani";
+// const lastName = "Raichandani";
+// console.log(firstName + " " + lastName);
+
+// assignment operators
+// let x = 15;
+// console.log(x); // 15
+// x += 10;
+// console.log(x); // 25
+
+// x -= 15;
+// console.log(x); // 10
+
+// x *= 2;
+// console.log(x); // 20
+
+// x /= 10;
+// console.log(x); // 2
+
+// increment/decrement operators
+// let y = 20;
+// console.log(y);
+// y++; //first uses the value then increment it
+// console.log(y);
+// y--; //first uses the value then decrement it
+// console.log(y);
+
+// ++y; //first increments the value and then uses it
+// console.log(y);
+// --y; //first decrements the value then uses it
+// console.log(y);
+
+// =================== ASSIGNMENT 4 ====================
+// const isIsland = false;
+// const language = "Hindi";
+// const country = "India";
+// const continent = "Asia";
+// let population = 140;
+
+// population /= 2;
+// console.log(population);
+
+// population++;
+// console.log(population);
+
+// let finlandPopulation = 6;
+// console.log(population > finlandPopulation);
+
+// let avgPopulation = 33;
+// console.log(population < avgPopulation);
+
+// const decription =
+//   country +
+//   " is in " +
+//   continent +
+//   " and its " +
+//   population +
+//   " million people speak " +
+//   language;
+
+// console.log(decription);
+// ===========================================================
+
+// =================== CODING CHALLENGE 1 ====================
+// Mark and John are trying to compare their BMI (Body Mass Index), which is
+// calculated using the formula:
+// BMI = mass / height ** 2 = mass / (height * height) (mass in kg
+// and height in meter).
+// Your tasks:
+// 1. Store Mark's and John's mass and height in variables
+// 2. Calculate both their BMIs using the formula (you can even implement both
+// versions)
+// 3. Create a Boolean variable 'markHigherBMI' containing information about
+// whether Mark has a higher BMI than John.
+// Test data:
+// § Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95
+// m tall.
+// § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76
+// m tall.
+
+let markHeight, johnHeight, markMass, johnMass;
+markHeight = 1.69;
+johnHeight = 1.95;
+markMass = 78;
+johnMass = 92;
+
+let markBMI = markMass / (markHeight * markHeight);
+console.log(markBMI);
+
+let johnBMI = johnMass / (johnHeight * johnHeight);
+console.log(johnBMI);
+
+let markHigherBMI = markBMI > johnBMI;
+console.log(markHigherBMI);
+
+markHeight = 1.88;
+johnHeight = 1.76;
+markMass = 95;
+johnMass = 85;
+
+markBMI = markMass / (markHeight * markHeight);
+console.log(markBMI);
+
+johnBMI = johnMass / (johnHeight * johnHeight);
+console.log(johnBMI);
+
+markHigherBMI = markBMI > johnBMI;
+console.log(markHigherBMI);
+
+// ===========================================================
