@@ -184,33 +184,48 @@
 // § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76
 // m tall.
 
-let markHeight, johnHeight, markMass, johnMass;
-markHeight = 1.69;
-johnHeight = 1.95;
-markMass = 78;
-johnMass = 92;
+// let markHeight, johnHeight, markMass, johnMass;
+// markHeight = 1.69;
+// johnHeight = 1.95;
+// markMass = 78;
+// johnMass = 92;
 
-let markBMI = markMass / (markHeight * markHeight);
-console.log(markBMI);
+// let markBMI = markMass / (markHeight * markHeight);
+// console.log(markBMI);
 
-let johnBMI = johnMass / (johnHeight * johnHeight);
-console.log(johnBMI);
+// let johnBMI = johnMass / (johnHeight * johnHeight);
+// console.log(johnBMI);
 
-let markHigherBMI = markBMI > johnBMI;
-console.log(markHigherBMI);
+// let markHigherBMI = markBMI > johnBMI;
+// console.log(markHigherBMI);
 
-markHeight = 1.88;
-johnHeight = 1.76;
-markMass = 95;
-johnMass = 85;
+// markHeight = 1.88;
+// johnHeight = 1.76;
+// markMass = 95;
+// johnMass = 85;
 
-markBMI = markMass / (markHeight * markHeight);
-console.log(markBMI);
+// markBMI = markMass / (markHeight * markHeight);
+// console.log(markBMI);
 
-johnBMI = johnMass / (johnHeight * johnHeight);
-console.log(johnBMI);
+// johnBMI = johnMass / (johnHeight * johnHeight);
+// console.log(johnBMI);
 
-markHigherBMI = markBMI > johnBMI;
-console.log(markHigherBMI);
+// markHigherBMI = markBMI > johnBMI;
+// console.log(markHigherBMI);
 
+// ===========================================================
+
+// String and Template Literals
+// earlier we used '+' sign for concatenating the strings.
+
+// const firstName = "shivani";
+// const lastName = "raichandani";
+// const job = "engineer";
+// const age = "24";
+
+// // =================== ASSIGNMENT 5 ====================
+
+// // below is how we can write template literal
+// const desc = `I'm ${firstName} ${lastName} a ${age} old ${job}!`;
+// console.log(desc);
 // ===========================================================
