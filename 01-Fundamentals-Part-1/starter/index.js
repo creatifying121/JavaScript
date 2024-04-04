@@ -66,6 +66,18 @@
 
 // console.log(typeof null); // the type of null should be null, but for some reason, it is a bug in javascript that type of null is "object"
 
+// =================== ASSIGNMENT 2 ====================
+// let isIsland = false;
+// let language;
+// let country = "India";
+// let population = "140 Millions";
+
+// console.log(typeof isIsland);
+// console.log(typeof language);
+// console.log(typeof country);
+// console.log(typeof population);
+// ===========================================================
+
 // ===========================================================
 
 // let , const and var in javascript
