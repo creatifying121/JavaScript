@@ -81,3 +81,17 @@
 // ===========================================================
 
 // let , const and var in javascript
+
+// =================== ASSIGNMENT 3 ====================
+// const isIsland = false;
+// const language = "Hindi";
+// const country = "India";
+// const continent = "Asia";
+// let population = "140 Millions";
+// isIsland = true; // TypeError: Assignment to const variable
+
+// console.log(typeof isIsland);
+// console.log(typeof language);
+// console.log(typeof country);
+// console.log(typeof population);
+// ===========================================================
