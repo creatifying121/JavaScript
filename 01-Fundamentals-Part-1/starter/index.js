@@ -229,3 +229,28 @@
 // const desc = `I'm ${firstName} ${lastName} a ${age} old ${job}!`;
 // console.log(desc);
 // ===========================================================
+
+// ===========================================================
+
+// control statements in javascript
+// const age = 13;
+
+// if (age >= 18) {
+//   console.log(`Shivani can drive!`);
+// } else {
+//   console.log(`Shivani have to wait for ${18 - age} more years to drive!`);
+// }
+
+// =================== ASSIGNMENT 6 ====================
+// let country = "India";
+// let population = 14;
+// let avgPopulation = 33;
+
+// if (population > avgPopulation) {
+//   console.log(`${country}'s population is above average`);
+// } else {
+//   console.log(
+//     `${country}'s population is ${avgPopulation - population} below average`
+//   );
+// }
+// ===========================================================
