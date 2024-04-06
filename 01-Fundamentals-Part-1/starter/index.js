@@ -287,3 +287,18 @@
 // }
 
 // ===========================================================
+
+// =================== Type conversion and coercion ====================
+// type conversion
+const birthYear = 2000;
+console.log(birthYear + "18"); // 200018
+// birth year will be treated as string, hence the output will be 200018
+
+console.log(Number("Shivani")); // NaN
+
+// type coercion
+console.log("23" + "10"); //2310
+console.log("13" + 10); //1310
+
+console.log("13" - "10" - 1); //2
+console.log("13" - "10" - "2"); //1
