@@ -332,17 +332,72 @@
 // ===========================================================
 
 // =================== Equality Operators (== vs. ===) ====================
-console.log("12" == 12); // true (because == does type coercion and makes string a number)
-console.log("12" === 12); // false (no type coercion takes place)
+// console.log("12" == 12); // true (because == does type coercion and makes string a number)
+// console.log("12" === 12); // false (no type coercion takes place)
 
-// to take user input, we can use prompt
-const favNumber = Number(prompt("Enter your favorite number: "));
-if (favNumber === 21) {
-  console.log("Great choice!");
-} else if (favNumber === 1) {
-  console.log("Ok ok choice!");
-} else {
-  console.log("Not at all a good choice");
-}
+// // to take user input, we can use prompt
+// const favNumber = Number(prompt("Enter your favorite number: "));
+// if (favNumber === 21) {
+//   console.log("Great choice!");
+// } else if (favNumber === 1) {
+//   console.log("Ok ok choice!");
+// } else {
+//   console.log("Not at all a good choice");
+// }
 
+// ===========================================================
+
+// =================== Logical Operators ====================
+// const hasDrivingLicense = true;
+// const hasGoodVision = true;
+
+// console.log(hasDrivingLicense && hasGoodVision); // output: true when both variables were true
+// console.log(hasDrivingLicense && hasGoodVision); // output: false when one of them or both variables were false
+// console.log(hasDrivingLicense || hasGoodVision); // output: true when any of the variable was true
+// console.log(hasDrivingLicense || hasGoodVision); // output: false when both variables were false
+
+// console.log(!hasDrivingLicense || hasGoodVision); // output: false
+// console.log(hasDrivingLicense || !hasGoodVision); // output: true
+
+// console.log(!hasDrivingLicense && hasGoodVision); // output: false
+// console.log(hasDrivingLicense && !hasGoodVision); // output: true
+
+// const isTired = false;
+
+// if (hasDrivingLicense && hasGoodVision && !isTired) {
+//   console.log("This person can drive!");
+// } else {
+//   console.log("Please refrain from driving");
+// }
+// ===========================================================
+
+// =================== CHALLENGE #3 ====================
+// There are two gymnastics teams: Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
+
+// Your tasks:
+
+// 1. Calculate the average score for each team, using the test data included below. The average score for Dolphins should be assigned to the scoreDolphins variable, and the average score of Koalas should be assigned to the scoreKoalas variable.
+
+// 2. Compare the team's average scores to determine the winner of the competition, and print to the console:
+
+// "Dolphins win the trophy" if Dolphins win, or
+
+// "Koalas win the trophy" if Koalas win, or
+
+// "Both win the trophy" if their average scores are equal.
+
+// TEST DATA: Dolphins scored 96, 108, and 89. Koalas scored 88, 91, and 110.
+
+/* Write your code below. Good luck! 🙂 */
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+
+// if (scoreDolphins > scoreKoalas) {
+//   console.log("Dolphins win the trophy");
+// } else if (scoreKoalas > scoreDolphins) {
+//   console.log("Koalas win the trophy");
+// } else {
+//   console.log("Both win the trophy");
+// }
 // ===========================================================
