@@ -304,6 +304,45 @@
 // console.log("13" - "10" - "2"); //1
 
 // ===========================================================
+
 // =================== Truthy and falsy values ====================
+
+// // Falsy values: 0, '', null, undefined, NaN
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+// console.log(Boolean(""));
+// console.log(Boolean(NaN));
+
+// // Truthy values: Anything except falsy values is a truthy value.
+// console.log(Boolean(100));
+
+// Truthy and falsy values are always applied implicitly by JS behind the scenes, we do not need to define them explicitly in our code.
+
+// there are two ways in which javascript can apply truthy and falsy values : while using logical operators and another one in logical context.
+
+// // In Logical Context
+// const money = 0;
+// if (money) {
+//   console.log(`You've got some money`); // if(true) this will be logged : when money is anything other than falsy value
+// } else {
+//   console.log(`Go, get a job!`); // if(not true) this will be logged : when money is simply zero
+// }
+
+// ===========================================================
+
+// =================== Equality Operators (== vs. ===) ====================
+console.log("12" == 12); // true (because == does type coercion and makes string a number)
+console.log("12" === 12); // false (no type coercion takes place)
+
+// to take user input, we can use prompt
+const favNumber = Number(prompt("Enter your favorite number: "));
+if (favNumber === 21) {
+  console.log("Great choice!");
+} else if (favNumber === 1) {
+  console.log("Ok ok choice!");
+} else {
+  console.log("Not at all a good choice");
+}
 
 // ===========================================================
