@@ -404,30 +404,61 @@
 // ===========================================================
 
 // =================== SWITCH STATEMENT IN JAVASCRIPT ====================
-const day = "friday";
+// const day = "friday";
 
-switch (day) {
-  case "monday":
-    console.log("Plan tasks for a week");
-    break;
-  case "tuesday":
-    console.log("start learning a new skill");
-    break;
-  case "wednesday":
-    console.log("start taking notes");
-    break;
-  case "thursday":
-    console.log("solve coding problems");
-    break;
-  case "friday":
-    break;
-  case "saturday":
-    console.log("enjoy weekend");
-    break;
-  case "sunday":
-    console.log("get ready for a new week");
-    break;
-  default:
-    console.log("invalid choice");
-}
+// switch (day) {
+//   case "monday":
+//     console.log("Plan tasks for a week");
+//     break;
+//   case "tuesday":
+//     console.log("start learning a new skill");
+//     break;
+//   case "wednesday":
+//     console.log("start taking notes");
+//     break;
+//   case "thursday":
+//     console.log("solve coding problems");
+//     break;
+//   case "friday":
+//     break;
+//   case "saturday":
+//     console.log("enjoy weekend");
+//     break;
+//   case "sunday":
+//     console.log("get ready for a new week");
+//     break;
+//   default:
+//     console.log("invalid choice");
+// }
 // ===========================================================
+
+// =================== STATEMENT VS. EXPRESSION ====================
+// Expression is something which produces a value, while statement does not produce any value when executed.
+
+// // Expression example:
+// let age = 15;
+
+// // statement example:
+// if (age >= 18) {
+//   console.log("The person can vote");
+// } else {
+//   console.log("The person can't vote");
+// }
+// ===========================================================
+
+// =================== TERNARY OPERATOR ====================
+// Ternary operator is another way of writing if else statement. this operator allows us to write whole statement in a single line of code. provided, when we only have single operation to execute
+
+// age = 24;
+// // age >= 18 ? console.log("person can vote") : console.log("person can't vote");
+
+// const vote = age >= 18 ? "vote ✅" : "cannot vote ❌";
+
+// console.log(vote);
+
+// // ternary operator inside a template literal
+// console.log(`This person ${age >= 18 ? "can vote ✅" : "cannot vote ❌"}`);
+
+// ===========================================================
+
+// =================== CHALLENGE #3 ====================
