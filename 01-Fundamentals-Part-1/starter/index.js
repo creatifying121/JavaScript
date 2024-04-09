@@ -372,6 +372,7 @@
 // ===========================================================
 
 // =================== CHALLENGE #3 ====================
+
 // There are two gymnastics teams: Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
 
 // Your tasks:
@@ -400,4 +401,33 @@
 // } else {
 //   console.log("Both win the trophy");
 // }
+// ===========================================================
+
+// =================== SWITCH STATEMENT IN JAVASCRIPT ====================
+const day = "friday";
+
+switch (day) {
+  case "monday":
+    console.log("Plan tasks for a week");
+    break;
+  case "tuesday":
+    console.log("start learning a new skill");
+    break;
+  case "wednesday":
+    console.log("start taking notes");
+    break;
+  case "thursday":
+    console.log("solve coding problems");
+    break;
+  case "friday":
+    break;
+  case "saturday":
+    console.log("enjoy weekend");
+    break;
+  case "sunday":
+    console.log("get ready for a new week");
+    break;
+  default:
+    console.log("invalid choice");
+}
 // ===========================================================
