@@ -29,22 +29,30 @@
 // const res = fruitProcessor(3, 2);
 // console.log(res);
 
-// Function Declaration
-function calcAge(birthYear) {
-  return 2024 - birthYear;
-}
+// // Function Declaration
+// function calcAge(birthYear) {
+//   return 2024 - birthYear;
+// }
 
-const age = calcAge(1997);
-console.log(age);
+// const age = calcAge(1997);
+// console.log(age);
 
-// function expression
-const calcage2 = function (birthYear) {
-  return 2024 - birthYear;
-};
+// // function expression
+// const calcage2 = function (birthYear) {
+//   return 2024 - birthYear;
+// };
 
-console.log(calcage2(2000));
+// console.log(calcage2(2000));
 
-// Arrow Function
-const calcAge3 = (birthYear) => 2024 - birthYear;
+// // Arrow Function
+// const calcAge3 = (birthYear) => 2024 - birthYear;
 
-console.log(calcAge3(2001));
+// console.log(calcAge3(2001));
+
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//   const age = 2024 - birthYear;
+//   const retirement = 65 - age;
+
+//   return `${firstName} will retire in ${retirement} years.`;
+// };
+// console.log(yearsUntilRetirement(2000, "Shivani"));
