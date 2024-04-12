@@ -56,3 +56,21 @@
 //   return `${firstName} will retire in ${retirement} years.`;
 // };
 // console.log(yearsUntilRetirement(2000, "Shivani"));
+
+// Function calling another functions
+// sometimes we need that a function can call another function inside it for related task
+
+function cutFruit(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruit(apples);
+  const orangePieces = cutFruit(oranges);
+
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges. Enjoy!`;
+
+  return juice;
+}
+
+console.log(fruitProcessor(2, 4));
