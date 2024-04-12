@@ -130,30 +130,63 @@
 // ================================================================================
 
 // ===================== Introduction to Arrays ================================
-const friends = ["Ayushi", "Purva", "Sagar", "Akash", "Nayan"];
-console.log(friends);
+// const friends = ["Ayushi", "Purva", "Sagar", "Akash", "Nayan"];
+// console.log(friends);
 
-// creating arrays using new keyword
-const exArr = new Array("1", 2, 3, 5);
-console.log(exArr);
+// // creating arrays using new keyword
+// const exArr = new Array("1", 2, 3, 5);
+// console.log(exArr);
 
-// accessing the array elements
-console.log(friends[2]);
+// // accessing the array elements
+// console.log(friends[2]);
 
-// altering the elements
-friends[1] = "Vijay";
-console.log(friends);
+// // altering the elements
+// friends[1] = "Vijay";
+// console.log(friends);
 
-// now what if we try to change whole array
-// friends = ["bhaiya", "papa", "mummy"]; // this will throw an error that, assignment to a constant variable (which is not possible)
+// // now what if we try to change whole array
+// // friends = ["bhaiya", "papa", "mummy"]; // this will throw an error that, assignment to a constant variable (which is not possible)
 
-// creating an array containing different types of values
-const firstName = "Shivani";
-const myArray = [
-  firstName,
-  "Raichandani",
-  2024 - 2000,
-  friends,
-  "React Developer",
-];
-console.log(myArray);
+// // creating an array containing different types of values
+// const firstName = "Shivani";
+// const myArray = [
+//   firstName,
+//   "Raichandani",
+//   2024 - 2000,
+//   friends,
+//   "React Developer",
+// ];
+// console.log(myArray);
+
+// // exercise
+// const calcAge = function (birthYear) {
+//   return 2024 - birthYear;
+// };
+// const years = [1990, 1993, 1960, 1997, 2000, 2001];
+
+// // how not to calculate age of these array elements
+
+// // console.log(calcAge(years)); // this is not possible because it is not clear, to what element of array we are referring, so it will give NaN as output, because years is not a number but an array
+
+// // how not to calculate age of these array elements end
+
+// // how we can calculate age of these array elmenets start
+
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+
+// console.log(age1, age2, age3);
+
+// // how we can calculate age of these array elmenets end
+
+// // we can store these ages in a new array
+// const ages = [
+//   calcAge(years[0]),
+//   calcAge(years[1]),
+//   calcAge(years[years.length - 1]),
+// ];
+
+// console.log(ages);
+
+// ================================================================================
