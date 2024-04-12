@@ -128,3 +128,32 @@
 // checkWinner(scoreDolphins, scoreKoalas);
 
 // ================================================================================
+
+// ===================== Introduction to Arrays ================================
+const friends = ["Ayushi", "Purva", "Sagar", "Akash", "Nayan"];
+console.log(friends);
+
+// creating arrays using new keyword
+const exArr = new Array("1", 2, 3, 5);
+console.log(exArr);
+
+// accessing the array elements
+console.log(friends[2]);
+
+// altering the elements
+friends[1] = "Vijay";
+console.log(friends);
+
+// now what if we try to change whole array
+// friends = ["bhaiya", "papa", "mummy"]; // this will throw an error that, assignment to a constant variable (which is not possible)
+
+// creating an array containing different types of values
+const firstName = "Shivani";
+const myArray = [
+  firstName,
+  "Raichandani",
+  2024 - 2000,
+  friends,
+  "React Developer",
+];
+console.log(myArray);
