@@ -60,17 +60,21 @@
 // Function calling another functions
 // sometimes we need that a function can call another function inside it for related task
 
-function cutFruit(fruit) {
-  return fruit * 4;
-}
+// function cutFruit(fruit) {
+//   return fruit * 4;
+// }
 
-function fruitProcessor(apples, oranges) {
-  const applePieces = cutFruit(apples);
-  const orangePieces = cutFruit(oranges);
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruit(apples);
+//   const orangePieces = cutFruit(oranges);
 
-  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges. Enjoy!`;
+//   const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges. Enjoy!`;
 
-  return juice;
-}
+//   return juice;
+// }
 
-console.log(fruitProcessor(2, 4));
+// console.log(fruitProcessor(2, 4));
+
+// ===============================================================================
+
+// ===================== Coding Challenge 1 ================================
