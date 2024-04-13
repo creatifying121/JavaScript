@@ -190,3 +190,49 @@
 // console.log(ages);
 
 // ================================================================================
+
+// Basic Array operations
+// const friends = ["Purva", "Varsha", "Ayushi"];
+// console.log(friends);
+
+// // adding element in the last position and see what this function returns
+// const pushFn = friends.push("Maya");
+// console.log(friends);
+// console.log(pushFn); // returns the value of length of array
+
+// // adding element at first position and see what this function returns
+// const unshiftFn = friends.unshift("Rekha");
+// console.log(friends);
+// console.log(unshiftFn); // returns the value of length of array
+
+// // removing last element from array and see what this function returns
+// const popFn = friends.pop();
+// console.log(friends);
+// console.log(popFn);
+
+// // removing first element from array and see what this function returns
+// const shiftFn = friends.shift();
+// console.log(friends);
+// console.log(shiftFn);
+
+// // fetching the index of a value in an array
+// console.log(friends.indexOf("Ayushi"));
+// console.log(friends.indexOf("Maya")); // returns -1 if element is not there
+
+// // checking if an element exists in array or not
+// console.log(friends.includes("Purva"));
+// console.log(friends.includes("Rekha")); // returns false if element does not exists
+
+// // what if we try to push element in an empty array and also try to pop elements from an array which does not have any elements
+// const check = [];
+// check.push(1, 2);
+// console.log(check); // elements got pushed
+
+// check.pop();
+// console.log(check); // 2 got popped
+
+// check.pop();
+// console.log(check); // 1 also got popped empty array received as output
+
+// check.pop();
+// console.log(check); // nothing happened, no errors, only empty arrya received as o/p
