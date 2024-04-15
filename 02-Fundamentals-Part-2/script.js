@@ -277,3 +277,12 @@
 // console.log(totals);
 
 // ===============================================================================
+
+// Introduction to objects
+const myData = {
+  firstName: "Shivani",
+  lastName: "Raichandani",
+  age: 2024 - 2000,
+  occupation: "React Developer",
+  friends: ["Ayushi", "Purva"],
+};
