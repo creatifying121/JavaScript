@@ -278,11 +278,48 @@
 
 // ===============================================================================
 
-// Introduction to objects
-const myData = {
-  firstName: "Shivani",
-  lastName: "Raichandani",
-  age: 2024 - 2000,
-  occupation: "React Developer",
-  friends: ["Ayushi", "Purva"],
-};
+// // Introduction to objects
+// const myData = {
+//   firstName: "Shivani",
+//   lastName: "Raichandani",
+//   age: 2024 - 2000,
+//   occupation: "React Developer",
+//   friends: ["Ayushi", "Purva", "Shivani(Me)"],
+// };
+
+// // data retrieval from objects - dot and bracket notation
+// // dot notation
+// console.log(myData.age);
+
+// // bracket notation
+// console.log(myData["occupation"]);
+// console.log(myData["firstName"]);
+
+// // in bracket notation, we can provide expression that can be calculated to produce a value, so that can also be retrieved. but this cannot be done using dot notation
+// const nameKey = "Name";
+// console.log(myData["last" + nameKey]);
+// console.log(myData.first + nameKey); // undefinedName will be output
+
+// // one more example for bracket notation
+// const interestedIn = prompt(
+//   "What to you want to know about me? firstName/lastName/age/occupation/friends??"
+// );
+// console.log(interestedIn);
+// //console.log(myData.interestedIn); // undefined (because interestedIn property does not exist in object)
+
+// if (myData[interestedIn]) {
+//   console.log(myData[interestedIn]);
+// } else {
+//   console.log("Wrong request");
+// }
+
+// // how to use dot and bracket notation to insert a new property in an object
+// myData.location = "India";
+// myData["linkedIn"] = "/shivani111";
+// console.log(myData);
+
+// // Challenge: write below sentence without hard coding any values in it
+// // "I have 3 friends, and my best friend is Shivani(Me)"
+// console.log(
+//   `${myData.firstName} has ${myData.friends.length}, and my best friend is ${myData.friends[2]}.`
+// );
