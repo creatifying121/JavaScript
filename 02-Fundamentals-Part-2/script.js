@@ -424,3 +424,180 @@
 // }
 
 // =========================================================================
+
+// Iteration : the for loop in JavaScript
+// for loop keeps running while the condition is true
+// syntax of for loop
+// for(variable initialization ; condition definition ; counter){
+//    operation to perform
+// }
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`I did ${rep} squat 🏋🏻‍♀️`);
+// }
+
+// // looping in arrays, breaking and continuing
+// const firstName = "Shivani";
+// const myArray = [
+//   firstName,
+//   "Raichandani",
+//   2024 - 2000,
+//   "React Developer",
+//   ["Ayushi", "Purva", "Saumya"],
+// ];
+
+// for (let i = 0; i < myArray.length; i++) {
+//   console.log(myArray[i]);
+// }
+
+// // now let's say we want to fill in the types of each value in array into a different array
+// const types = [];
+
+// for (let i = 0; i < myArray.length; i++) {
+//   // first way of doing this
+//   // types[i] = typeof myArray[i];
+
+//   // another way: we can directly push the type in the types array
+//   types.push(typeof myArray[i]);
+// }
+
+// console.log(types);
+
+// const ages = [1997, 1994, 2000, 2013, 2015];
+
+// const calcAge = [];
+
+// for (let i = 0; i < ages.length; i++) {
+//   calcAge.push(2024 - ages[i]);
+// }
+// console.log(calcAge);
+
+// // continue keyword: it is to exit the current iteration of loop and continue to the next one
+// // break keyword: it is to completely terminate the whole loop
+// console.log(" ----------- ONLY STRINGS --------");
+// for (let i = 0; i < myArray.length; i++) {
+//   // here we are trying to communicate, that if the current element is not an string, then ext the current iteration and continue with the next one.
+//   if (typeof myArray[i] !== "string") continue;
+
+//   console.log(myArray[i]);
+// }
+// console.log("----------------------------------");
+
+// // now we know that break exits whole loop, let's see an example where if a number is encountered then loop should be terminated.
+// console.log("-------------- BREAK STATEMENT -----------------");
+// for (let i = 0; i < myArray.length; i++) {
+//   if (typeof myArray[i] === "number") break;
+
+//   console.log(myArray[i]);
+// }
+// console.log("----------------------------------");
+
+// =========================================================================
+
+// // LOOPING BACKWARDS
+// const firstName = "Shivani";
+// const myArray = [
+//   firstName,
+//   "Raichandani",
+//   2024 - 2000,
+//   "React Developer",
+//   ["Ayushi", "Purva", "Saumya"],
+// ];
+
+// // let's try printing values in reverse, like from the last element to the first
+// for (let i = myArray.length - 1; i >= 0; i--) {
+//   console.log(myArray[i]);
+// }
+
+// // LOOPS IN LOOPS
+// // in the start of the loops we saw that we have a statement which we needed to print for 10 times, now let's say a person does three sets of exercises , 5 times each, let's see how we can achieve it
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`----------Starting Exercise ${exercise}----------`);
+
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight ${rep} 🏋🏻‍♀️`);
+//   }
+// }
+
+// =========================================================================
+
+// WHILE LOOP
+// let's take a reference from the for loop we have already
+// for (let rep = 1; rep < 6; rep++) {
+//   console.log(`Lifting weight ${rep} 🏋🏻‍♀️`);
+// }
+
+// let rep = 1;
+// while (rep < 6) {
+//   console.log(`WHILE: Lifting weight ${rep} 🏋🏻‍♀️`);
+
+//   rep++;
+// }
+
+// while loop is more versatile than for loop, and it does not always requires a counter to perform operations, let's see below an example where we can generate random numbers
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// // run loop until we roll 6 number on the dice
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+
+//   // updating the value in each iteration otherwise loop will run for infinite times
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) {
+//     console.log("Loop is about to end...");
+//   }
+// }
+
+// ============================== CODING CHALLENGE 4 ================================
+
+// CHALLENGE #4
+// Let's improve Steven's tip calculator even more, this time using loops!
+
+// Your tasks:
+
+// Create an array called bills containing all 10 test bill values.
+
+// Create empty arrays for the tips and the totals (tips and totals)
+
+// Use the calcTip function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+// TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
+
+// BONUS:
+
+// 1. Write a function calcAverage which takes an array called arr as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how to solve it if you feel like it:
+
+// 2. First, you will need to add up all values in the array. To do the addition, start by creating a variable sum that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the sum variable. This way, by the end of the loop, you have all values added together.
+
+// 3. To calculate the average, divide the sum you calculated before by the length of the array (because that's the number of elements).
+
+// Call the function with the totals array.
+
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+
+// /* Write your code below. Good luck! 🙂 */
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// const tips = [];
+// const totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//   tips[i] = calcTip(bills[i]);
+
+//   totals[i] = tips[i] + bills[i];
+// }
+
+// let sum = 0;
+
+// function calcAverage(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+
+//   return sum / arr.length;
+// }
+
+// =========================================================================
