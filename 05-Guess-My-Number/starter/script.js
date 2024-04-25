@@ -26,6 +26,9 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // everytime a wrong guess is made, we need to decrease the score
 let score = 20;
 
+// highscore logic
+let highscore = 0;
+
 // now let's make our code do something for us and to achieve this we need event listeners
 // event is something that happens on a page, for example, mouse click, or a key press or many other events
 // we want to add an event listener on the check button, because we want that something should happen when we check the number we entered
@@ -44,6 +47,11 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
 
     document.querySelector(".number").style.width = "30rem";
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📈 Too High!";
