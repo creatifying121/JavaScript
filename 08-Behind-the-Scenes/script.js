@@ -325,3 +325,19 @@ const shivani = {
   greet: () => console.log(`Hey ${this.firstName}`),
 };
 shivani.calcAge();
+
+// as we know that arrow function should not be used where we need to use this keyword, in the same way we have arguments keyword, which works for regular function expressions but not for the arrow functions
+const func = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+func(2, 5);
+func(3, 4, 5, 6);
+
+// for arrow function
+const fun = (a, b) => {
+  console.log(arguments); // arguments is not defined
+  return a + b;
+};
+fun(2, 5);
+fun(3, 4, 5, 6);
