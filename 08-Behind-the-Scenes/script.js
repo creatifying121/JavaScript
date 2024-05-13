@@ -342,3 +342,24 @@ const fun = (a, b) => {
 fun(2, 5);
 fun(3, 4, 5, 6);
 */
+
+// ========================= PRIMITIVES VS. OBJECTS/REFERENCE TYPES (HOW THEY ARE STORED IN MEMORY) ============================
+
+// the source of confusion
+let age = 30;
+let oldAge = age;
+
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+const me = {
+  name: "Shivani",
+  age: 30,
+};
+
+const frnd = me; // copying the object into a new one
+frnd.age = 27;
+
+console.log("Friend", frnd); // here age is 27
+console.log("Me", me); // here also it became 27, but we were thinking that it will be 31
