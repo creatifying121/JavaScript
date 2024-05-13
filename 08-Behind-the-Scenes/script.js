@@ -297,7 +297,7 @@ const shivani = {
 // shivani.greet(); // Hey undefined. (it is using parent's lexical scope, so the value of this is undefined)
 
 shivani.greet(); // Hey Sagar (after adding firstName variable outside of the object in global scope)
-*/
+
 
 // Example IMP : when we have a function inside method
 const shivani = {
@@ -341,3 +341,4 @@ const fun = (a, b) => {
 };
 fun(2, 5);
 fun(3, 4, 5, 6);
+*/
