@@ -232,7 +232,7 @@ console.log('After marriage: ', jessicaCopy);
 */
 
 // =========================================================================
-
+/*
 // this keyword - my practice
 console.log(this); // it refers to the window object, hence o/p is window object
 
@@ -270,7 +270,58 @@ console.log(purva);
 purva.calcAge(); // 25 (this keyword always points to the object that is calling the method. even if it is written inside another object)
 
 // now what if we move the function completely out.
-const f = jonas.calcAge();
+const f = shivani.calcAge;
 f(); // here this keyword is undefined, we will also get an error "cannot read property 'year' of undefined, because this.year means undefined.year, so value cannot be calculated"
 
 // this is because, f function is now just a regular function call, it is not attached to any object. basically no one owns the f function. so in that case, this keyword will be undefined.
+*/
+
+// ================== REGULAR FUNCTION VS. ARROW FUNCTION =========================
+
+// 1. never ever use arrow function as a method inside an object
+
+/*
+// if the firstName was defined outside of the object, using var keyword, then its value can be accessed by the greet method, because, var keyword adds properties to the global object
+var firstName = "Sagar";
+
+const shivani = {
+  firstName: "Shivani",
+  year: 2000,
+  calcAge: function () {
+    console.log(this);
+    console.log(2024 - this.year);
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+// shivani.greet(); // Hey undefined. (it is using parent's lexical scope, so the value of this is undefined)
+
+shivani.greet(); // Hey Sagar (after adding firstName variable outside of the object in global scope)
+*/
+
+// Example IMP : when we have a function inside method
+const shivani = {
+  firstName: "Shivani",
+  year: 2000,
+  calcAge: function () {
+    console.log(this);
+    console.log(2024 - this.year);
+
+    // SOLUTION 1: using self variable
+    // const self = this; // self = shivani object
+    // const ifMillenial = function () {
+    //   // console.log(this.year >= 1991 && this.year < 2000);
+    //   console.log(self.year >= 1991 && self.year <= 2000);
+    // };
+    // ifMillenial(); // error: cannot read properties of year. this means that this keyword must be undefined. solution to this can be defining a self variable which preserves the value of this (shivani object in this case)
+
+    // SOLUTION 2: Using an Arrow function (because arrow function does not have its own this keyword, instead it usese this from its parent scope) without any extra variable. in this case parent scope is shivani object
+    const ifMillenial = () => {
+      console.log(this.year >= 1991 && this.year <= 2000);
+    };
+    ifMillenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+shivani.calcAge();
