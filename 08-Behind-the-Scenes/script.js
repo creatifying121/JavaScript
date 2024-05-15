@@ -343,6 +343,7 @@ fun(2, 5);
 fun(3, 4, 5, 6);
 */
 
+/*
 // ========================= PRIMITIVES VS. OBJECTS/REFERENCE TYPES (HOW THEY ARE STORED IN MEMORY) ============================
 
 // the source of confusion
@@ -363,3 +364,57 @@ frnd.age = 27;
 
 console.log("Friend", frnd); // here age is 27
 console.log("Me", me); // here also it became 27, but we were thinking that it will be 31
+*/
+
+// ========================= PRIMITIVES VS. OBJECTS/REFERENCE TYPES (HOW THEY ARE STORED IN MEMORY) PRACTICE ============================
+let lastName = "Raichandani";
+let oldLastName = lastName;
+
+lastName = "Imaginary";
+console.log("old", oldLastName);
+console.log("new", lastName);
+
+// reference types
+const purva = {
+  firstName: "Purva",
+  lastName: "Joshi",
+  age: 25,
+};
+
+const marriedPurva = purva;
+purva.lastName = "Shrivastava";
+console.log("before marriage", purva);
+console.log("after marriage", marriedPurva);
+
+// here we saw that for both purva and married purva, surname changed. so this is because the object is being store in the heap memory, and we can make changes in the properties there, because const and let have nothing to do with the heap memory. they are strict in the call stack part. so if we try to assign a whole new object to married purva, then it will throw an error
+
+// marriedPurva = {}; // assignment to constant variable (this is because, marriedPurva exists in the call stack, it is referring to the purva object, so a whole new assignment cannot be done to this object as it is const. if there was let, then we could have reassigned it a new object)
+
+// what if we want to copy an object and if we make some changes then it should not affect the older one?
+const purva2 = {
+  firstName: "purva",
+  lastName: "joshi",
+  age: 25,
+
+  // deep copy example
+  family: ["Shivani", "Akash"],
+};
+
+// to copy object we can do as below (merging two object)
+const purvaCopy = Object.assign({}, purva2);
+purvaCopy.lastName = "Shrivastava";
+
+console.log("before marriage", purva2);
+console.log("after marriage", purvaCopy);
+
+// deep copy example
+purvaCopy.family.push("Nayan");
+purvaCopy.family.push("Sagar");
+
+// here we can see that before and after marriage, purva has 4 members, while we expected that before marriage there are 2 family members. this is because object.assign() creates a shallow copy. because of that, array object cannot be copied the way we wanted
+console.log("before marriage", purva2);
+console.log("after marriage", purvaCopy);
+
+// using the OBJECT.ASSIGN() technique only works on the first level, i.e., if we have an object inside the object, then this inner object will actually still be the same. so it will still point to the same place in the memory. and that's why it is said that object.assign() creates a shallow copy and not a deep clone, which is what we would like to have. as deep copy clones everything.
+
+// deep cloning is a complex topic, which is handled using external library like lodash, so here we are not doing so, but we'll learn later
