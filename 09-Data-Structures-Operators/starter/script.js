@@ -31,6 +31,7 @@ const restaurant = {
     },
   },
 
+  /*
   // practical application of object destructuring
   // orderDelivery: function (obj) {
   // it is common, because now here in the function arguments , we can actually do destructuring right away
@@ -40,14 +41,17 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  */
 };
 
+/*
 restaurant.orderDelivery({
   time: "22:30",
   address: "Bhopal",
   mainIndex: 2,
   starterIndex: 2,
 }); // this is pretty common when we use APIs or any third party websites to fetch data
+*/
 
 // =============================================== DESTRUCTURING ARRAY START=============================
 /*
