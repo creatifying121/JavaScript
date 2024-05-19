@@ -222,3 +222,24 @@ const books = [
     highlighted: true,
   },
 ];
+
+// 2.1 Destructure the first book object from the books array into variables called title, author and ISBN.
+const { title, author, isbn } = books[0];
+console.log(`Title: ${title}, Author: ${author} and ISBN: ${isbn}`);
+
+// 2.2 Each book object has the keywords property. Destructure the first book object from the books array into a variable called tags. The tags variable should be assigned with the value of the keywords property.
+const { keywords: tags } = books[0];
+console.log(tags);
+
+// 2.3 The seventh book from the books array is missing the programmingLanguage property. Destructure the seventh book object (books[6]) into variables called language and programmingLanguage. Assign the programmingLanguage variable with a default value of 'unknown'.
+const { language, programmingLanguage = "unknown" } = books[6];
+console.log(
+  `Language: ${language} and Programming Language: ${programmingLanguage}`
+);
+
+// 2.4 Below are two variables called bookTitle and bookAuthor. Reassign them with the values of the title and author properties of the first book object from the books array.
+let bookTitle = "unknown";
+let bookAuthor = "unknown";
+
+({ title: bookTitle, author: bookAuthor } = books[0]);
+console.log(bookTitle, bookAuthor);
