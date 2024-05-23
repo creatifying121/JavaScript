@@ -173,3 +173,7 @@ console.log(o, c); // 11 23
 // many times in javascript we have functions with a lot of parameters, but then it can be hard to know the order of the parameters for someone that is using this function. And so instead of defining the parameters manually, we can just pass an object into the function as an argument, and then function will immediately destructure that object.
 */
 // =============================================== DESTRUCTURING OBJECT END =============================
+
+// =============================================== SPREAD OPERATOR START ================================
+
+// =============================================== SPREAD OPERATOR END ================================
