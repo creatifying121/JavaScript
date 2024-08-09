@@ -76,16 +76,48 @@ const myfun = function () {
 };
 
 // types of everyone
-console.log(typeof num1); // number
-console.log(typeof num2); // number
-console.log(typeof isLoggedIn); // boolean
-console.log(typeof temp); // object
-console.log(typeof email); // undefined
-console.log(typeof id); // symbol
-console.log(typeof anotherId); // symbol
-console.log(typeof bigNumber); // number
-console.log(typeof bigNumber2); // bigint
-console.log(typeof bigNumber3); // bigint
-console.log(typeof food); // object
-console.log(typeof info); // object
-console.log(typeof myfun); // function
+// console.log(typeof num1); // number
+// console.log(typeof num2); // number
+// console.log(typeof isLoggedIn); // boolean
+// console.log(typeof temp); // object
+// console.log(typeof email); // undefined
+// console.log(typeof id); // symbol
+// console.log(typeof anotherId); // symbol
+// console.log(typeof bigNumber); // number
+// console.log(typeof bigNumber2); // bigint
+// console.log(typeof bigNumber3); // bigint
+// console.log(typeof food); // object
+// console.log(typeof info); // object
+// console.log(typeof myfun); // function
+
+// ======================================================================================================
+// MEMORIES
+
+// stack and heap memory
+
+/*
+  all the primitive types are stored in stack
+*/
+
+/*
+  all the non-primitive types are stored in heap
+*/
+
+let num = 12;
+let numm = num;
+numm = 14;
+console.log(num); // 12
+console.log(numm); // 14, since the change is being made to copy of num, and not into num itself
+
+let userOne = {
+  name: "shivani",
+  email: "abc@gmail.com",
+};
+let userTwo = userOne;
+
+userTwo.email = "shivani@meesho.com";
+
+console.log(userOne.email); // shivani@meesho.com , because when we did this (userTwo = userOne), then we gave userTwo, reference of userOne, and hence whatever change we will make using userTwo, then it will be made in the global properties of object, and not to any copy
+console.log(userTwo.email); // shivani@meesho.com
+
+// ======================================================================================================
