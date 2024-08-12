@@ -1,0 +1,27 @@
+1. isme typeof jsUser[mySym], string kyu aarha?? jabki usko to symbol aana chahiye tha!
+
+const mySym = Symbol("key1");
+
+const jsUser = {
+  name: "Shivani",
+  "full name": "Shivani Raichandani",
+  [mySym]: "myKey1",
+  age: 24,
+  location: "Bhopal",
+  email: "shivani@meesho.com",
+  isLoggedIn: false,
+  lastLogInDays: ["monday", "saturday"],
+};
+
+console.log(jsUser[mySym]); // myKey1
+console.log(typeof jsUser[mySym]); // string
+
+==============================================================================================
+
+2. same object mein ek function add kra maine, to usko jab log kara, to log krne pr result aarha hain, lkn saath mein undefined bhi aarha hai, why so?
+
+jsUser.greeting = function () {
+  console.log("hello there!");
+};
+
+console.log(jsUser.greeting()); // hello there! (in a new line)undefined
