@@ -44,3 +44,33 @@ if (loggedInFromEmail || loggedInFromGoogle) {
   // if any one condition is true, code will execute
   console.log("you can login");
 }
+
+// Above were the logical operators widely used, we have one more operator like this -
+
+// NULLISH COALESCING OPERATOR (??) : this operator revolved around these two values, null and undefined
+
+// this operator is used to decide which value to prefer, below are the examples
+
+let val;
+
+// val = 5 ?? 10;
+// console.log(val); // 5
+
+// val = null ?? 10; // we are asking to decide if you have got the value then assign that value to the variable, otherwise null {these are used to handle complex db or api responses, we won't be getting any straightforward value like 10 in real world cases}
+// console.log(val); // 10
+
+// val = undefined ?? 15; // again, we are asking it to put a value if received one, otherwise undefined
+// console.log(val); // 15
+
+//++++++++++++++++++++
+
+// IN BELOW CASE, THE FIRST VALUE WHICH IS RECEIVED, WILL BE THE OUTPUT
+// val = null ?? 10 ?? 15; // 10 will be the output, because, it is the first value encountered
+// console.log(val); // 10
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// TERNARY OPERATOR {condition ? true : false}
+
+const icedTeaPrice = 100;
+icedTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
