@@ -67,10 +67,12 @@ for (const [key, value] of map) {
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// FOR OF LOOP IN OBJECT
-const obj = {
-  1: "tea",
-  2: "kokam sharbat",
-  3: "orange juice",
-  4: "coffee",
-};
+// FOR IN LOOP FOR ARRAY
+
+const arrrr = ["shivani", "purva", "bhumika", "laisha", "dakshayani"];
+
+for (const key in arrrr) {
+  console.log(key); // {output: 0 1 2 3 4} => all the indices of array are returned
+
+  console.log(arrrr[key]); // {output: all names}
+}
