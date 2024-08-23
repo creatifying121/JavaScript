@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Introduction</title>
+
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 class="heading" id="title">
+        DOM Intro <span style="display: none">can you see me?</span>
+      </h1>
+
+      <!-- adding multiple h2 elements to test query selector -->
+      <h2 class="first">Lorem ipsum dolor sit amet.</h2>
+      <h2 class="second">Lorem ipsum dolor sit amet.</h2>
+      <h2 class="third" id="thirdH2">Lorem ipsum dolor sit amet.</h2>
+
+      <!-- adding multiple h2 elements to test query selector end -->
+
+      <!-- adding input tag to test query selector -->
+      <input type="password" />
+      <!-- adding input tag to test query selector end -->
+
+      <!-- adding ul with some list items to see dom manipulation -->
+      <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+      </ul>
+      <!-- adding ul with some list items to see dom manipulation end -->
+
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <script>
+      console.log(document.getElementById("title")); // <h1 class="heading" id="title">DOM Intro</h1>
+      console.log(document.getElementById("title").id); // title
+      console.log(document.getElementById("title").className); // heading
+      console.log(document.getElementById("title").getAttribute("id")); // 'title'
+      console.log(document.getElementById("title").getAttribute("class")); // 'heading'
+
+      // set attribute will overwrite existing class
+      console.log(
+        document.getElementById("title").setAttribute("class", "test")
+      ); // undefined => in the browser, you can see this element => <h1 class="test" id="title">DOM Intro</h1>
+
+      // if we want to set previous class too, then we need to explicitly tell the browser to do so
+      console.log(
+        document.getElementById("title").setAttribute("class", "test heading")
+      ); // undefined => element overwritten => <h1 class="test heading" id="title">DOM Intro</h1>
+
+      console.log(document.getElementsByClassName("heading")); // returns an html collection
+
+      // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      const title = document.getElementById("title");
+
+      // changing the style
+      title.style.backgroundColor = "green";
+
+      // changing padding
+      title.style.padding = "15px";
+
+      // applying border radius
+      title.style.borderRadius = "2rem";
+
+      // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // accessing content from html file
+
+      // textContent, innerHTML, innerText => all three are giving same output but are internally different
+      // console.log(title.textContent); // DOM Intro (when span was not added)
+
+      // console.log(title.innerHTML); // DOM Intro (when span was not added)
+
+      // console.log(title.innerText); // DOM Intro (when span was not added)
+
+      // difference between innerText and textContent
+      console.log(title.innerText); // DOM Intro (span is added and since it has display: none property, thus the text is not visible here)
+
+      console.log(title.textContent); // DOM Intro can you see me? (here it does not hide the content whose display property was set to none)
+
+      console.log(title.innerHTML); // DOM Intro <span style="display: none">can you see me?</span> (this gives everything, even span text is returned along with the span tags)
+
+      // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // QUERY SELECTOR: it selects the first element to appear in HTML page (when selecting tag/element)
+      console.log(document.querySelector("h2")); // <h2 class="first">Lorem ipsum dolor sit amet.</h2>
+
+      // Selecting id using querySelector()
+      console.log(document.querySelector("#thirdH2")); // <h2 class="first">Lorem ipsum dolor sit amet.</h2>
+
+      // selecting class using querySelector()
+      console.log(document.querySelector(".second")); // <h2 class="second">Lorem ipsum dolor sit amet.</h2>
+
+      // selecting tags along with attributes using querySelector
+      console.log(document.querySelector('input[type="password"]')); // <input type="password">
+
+      // the way we use css selectors , similarly we can use these in querySelector() too
+
+      // some more example
+      const myUL = document.querySelector("ul");
+
+      const myLI = myUL.querySelector("li"); // since i wanted to select only first li to manipulate it
+
+      // myLI.style.backgroundColor = "green";
+      // myLI.style.padding = "15px";
+      console.log(myLI.innerText);
+      myLI.innerText = "heyyyyyaaaa";
+      console.log(myLI.innerText);
+
+      // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // QUERY SELECTOR ALL
+      const tempLiList = document.querySelectorAll("li");
+      console.log(tempLiList); // this gives us a node list, it also has a forEach in it , but that doesn't mean it is an array. node list and html collection are not pure arrays
+
+      // let's try changing color of list items
+      // tempLiList.style.color = 'green'; // error: it cannot set property like this
+
+      // correct way to do so
+      tempLiList[0].style.color = "blue"; // changed the color of first list item
+      tempLiList[1].style.color = "red"; // changed the color of first list item
+
+      tempLiList.forEach((item) => {
+        item.style.backgroundColor = "beige";
+      });
+
+      // query selector all on a single element (which appears only one time on page)
+      const myH1 = document.querySelectorAll("h1");
+      // myH1.style.color = "cyan"; // this will not work, it doesn't matter if it is appearing one time or many times in the html doc because it is providing node list
+
+      myH1[0].style.color = "cyan"; // it worked
+
+      // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // GET ELEMENTS BY CLASS NAME
+      console.log(document.getElementsByClassName("list-item")); // it will return an html collection
+
+      // this html collection does not have forEach or any kind of loop through which we can loop over the elements, and to use loops we need to convert html collection to an array
+
+      // converting html collection to array
+      const tempClassList = document.getElementsByClassName("list-item");
+      const tempClassListToArray = Array.from(tempClassList);
+
+      console.log(tempClassListToArray); // an array containing 4 list items is returned
+
+      tempClassListToArray.forEach((li) => (li.style.color = "brown"));
+    </script>
+  </body>
+</html>

@@ -11,6 +11,7 @@ const jsUser = {
   email: "shivani@meesho.com",
   isLoggedIn: false,
   lastLogInDays: ["monday", "saturday"],
+  key: mySym,
 };
 
 console.log(jsUser[mySym]); // myKey1
