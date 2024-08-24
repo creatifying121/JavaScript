@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating NodeList</title>
+
+    <style>
+      .bg-color {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-color"></body>
+
+  <script>
+    // create a div element
+    const div = document.createElement("div");
+    // console.log(div);
+
+    // adding properties to this div
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1); // generates random  id from 1 to 9
+    // console.log(div); // <div class="main" id="4"></div>
+
+    // setting some other attributes
+    div.setAttribute("title", "shivani");
+
+    // adding some text and styles
+    div.innerText = "hello there";
+    div.style.color = "#fff";
+    div.style.backgroundColor = "grey";
+    // console.log(div); // <div class="main" id="5" title="shivani" style="color: rgb(255, 255, 255); background-color: grey;">hello there</div>
+
+    // there's a debate that innerText is not a good way, as it overwrites the value, and because of that, goes 2 rounds, first fetch the old value and then providing a new one , below is considered a better one
+    const addText = document.createTextNode(" heyy there");
+    div.appendChild(addText); // now we can see that this text is being added with the previous one, and not overwritten => text displayed is : hello there heyy there
+
+    // let's try adding some more text using second method
+    const addTextNew = document.createTextNode(" i am shivani");
+    div.appendChild(addTextNew); // now the text is displayed like this : hello there heyy there i am shivani
+
+    // one more time, let's use innerText
+    div.innerText = "i hope you are doing great"; // now whole text has been overwritten and this is being displayed: i hope you are doing great
+
+    // attaching this div to the html page
+    document.body.appendChild(div);
+  </script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Let's create elements</title>
+
+    <style>
+      .bg-color {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-color">
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+
+    <script>
+      // select parent element and find out what it is containing
+      const parent = document.querySelector(".parent");
+      console.log(parent); // gives whole parent element along with the elements it is containing
+
+      console.log(parent.children); // an html collection is returned consisting of all the child divs of this parent class
+
+      // accessing the child elements
+      console.log(parent.children[1]); // <div class="day">Tuesday</div>
+
+      // accessing the content of child elements
+      console.log(parent.children[2].innerHTML); // Wednesday
+
+      // we don't get forEach with html collection, and to loop over html collection using forEach, we need to convert it to array, but we can use normal for loop if we don't want to convert html collection to array
+      for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML); // Monday Tuesday Wednesday Thursday
+      }
+
+      // changing some styling
+      parent.children[3].style.color = "brown";
+
+      // some other properties of parent
+      // 1. firstElementChild
+      console.log(parent.firstElementChild); // <div class="day">Monday</div>
+
+      // 2. lastElementChild
+      console.log(parent.lastElementChild); // <div class="day" style="color: brown;">Thursday</div>
+
+      // +++++++++++++++++++++++++++++++++
+
+      // let's select the first child element using query selector
+      const dayOne = document.querySelector(".day");
+      console.log(dayOne);
+
+      // now let's try to move to parent through child's reference
+      console.log(dayOne.parentElement);
+
+      // we can also find the sibling of the dayOne
+      console.log(dayOne.nextElementSibling); // <div class="day" style="color: brown;">Thursday</div>
+
+      // ++++++++++++++++++++++++++++
+
+      // SOME INTERESTING STUFF
+      console.log(parent.childNodes); // here we'll see that there are 9 nodes, while when we see the parent div then we can see only 4 children. so this is because, even a line break is a child, hence we are getting the count as 9 => NodeList(9)[text, div.day, text, div.day, text, div.day, text, div.day, text ] => every text here represents a line break
+    </script>
+  </body>
+</html>

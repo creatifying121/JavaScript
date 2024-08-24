@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit and Remove Elements in DOM</title>
+
+    <style>
+      .bg-color {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-color">
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+
+    <script>
+      // adding more elements using dom manipulation
+
+      // // 1. using function , where we have defined the logic to add the element
+
+      // // DRAWBACK OF THIS METHOD: in this method, every time to append a child at the end, browser needs to go through whole dom tree, and this is quite inefficient
+      // function addLanguage(langName) {
+      //   // 1. create an li element
+      //   const li = document.createElement("li");
+
+      //   // 2. adding langName to the text of li
+      //   li.innerHTML = `${langName}`;
+
+      //   // 3. adding this li to the list we created in html
+      //   document.querySelector(".language").appendChild(li);
+      // }
+
+      // // invoking function
+      // addLanguage("Java");
+      // addLanguage("python");
+
+      // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // 2. an optimized way
+      function addLanguage(langName) {
+        const li = document.createElement("li");
+
+        li.appendChild(document.createTextNode(langName));
+
+        document.querySelector(".language").appendChild(li);
+      }
+      addLanguage("Java");
+      addLanguage("python");
+      addLanguage("cpp");
+      addLanguage("ruby");
+
+      // ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // EDITING A VALUE
+      // 1. selecting the element to edit
+      const selectLang = document.querySelector("li:nth-child(2)");
+      // selectLang.innerHTML = 'golang' // => not an optimized way
+
+      // better way
+      const newLi = document.createElement("li");
+      newLi.textContent = "golang";
+      selectLang.replaceWith(newLi);
+
+      // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // editin one more element
+      const firstLang = document.querySelector("li:first-child");
+      // console.log(firstLang);
+
+      // const newfirstLang = document.createElement("li");
+      // newfirstLang.innerHTML = "typescript";
+      // firstLang.replaceWith(newfirstLang);
+
+      // another way of editing
+      firstLang.outerHTML = "<li>TypeScript</li>";
+
+      // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      // REMOVING ELEMENT
+      const lastLang = document.querySelector("li:last-child");
+      lastLang.remove();
+    </script>
+  </body>
+</html>
