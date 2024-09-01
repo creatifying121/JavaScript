@@ -62,43 +62,137 @@
     <script>
       // all the events in javascript run in a sequential order (there are some exceptions)
 
+      // ============================================================================
+
+      // avoid adding inline events in html code like this <button onclick="alert('hey there')">click me</button> => this works, but it is not feasible solution, while scaling up the code, this will give us a lot of issues. This approach works well in React, it is scalable there, but not in JavaScript
+
+      // another approach, using onclick by selecting that element, it gives the results but not much information is provided, when event occurs, so best approach here is to use add event listener.
+
       // document.getElementById('owl').onclick = function(){
       //     alert("owl clicked")
       // }
 
-      // attachEvent()
-      // jQuery - on
+      // ============================================================================
 
-      // type, timestamp, defaultPrevented
+      // addEventListener() gives us the capability of propagation, it gives us a lot more features to work with. While onclick does not provide much features.
+
+      // addEventListener() provides various events that can be listened, like mouse click, drag, submit, keyboard events etc.
+
+      // attachEvent() => this was used earlier when we needed to use internet explorer for websites
+      // jQuery - on() => it is similar to addEventListener()
+
+      // what to know most about the event object - Below are the things you need to know:
+      // type, timestamp, preventDefault()
       // target, toElement, srcElement, currentTarget,
       // clientX, clientY, screenX, screenY
       // altkey, ctrlkey, shiftkey, keyCode
 
-      // document.getElementById('images').addEventListener('click', function(e){
+      // ====================================================================================
+
+      // false is the third parameter in addEventListener(), it is the default value , thus many of us skip it to write explicitly.
+
+      // even we write true on the place of false, there will be no difference in the output at this point, alert will work just fine, and even if we try to print the event which has occured, then also we won't be able to notice any difference.
+      document.getElementById("owl").addEventListener(
+        "click",
+        function (e) {
+          console.log(e);
+        },
+        true
+      );
+
+      // if we cannot see anything, then what is event propagation?? event propagation has two contexts, event bubbling and event capturing. usually we talk about the event bubbling (false part), but in some cases we have to use event capturing sometimes.
+
+      // EXAMPLES
+
+      // when we add both of the codes, "clicked inside ul" and "owl clicked" (without stoPropagation()), then when we clicked on owl image, we got owl clicked and then clicked inside the ul. this is because , it bubbled up, since owl image is inside ul itself. so to stop this bubbling up, we use event.stopPropagation() which will refrain from calling ul.
+
+      // document.getElementById("images").addEventListener(
+      //   "click",
+      //   function (e) {
       //     console.log("clicked inside the ul");
-      // }, false)
+      //   },
+      //   false
+      // );
 
-      // document.getElementById('owl').addEventListener('click', function(e){
+      // document.getElementById("owl").addEventListener(
+      //   "click",
+      //   function (e) {
       //     console.log("owl clicked");
-      //     e.stopPropagation()
-      // }, false)
+      //     e.stopPropagation();
+      //   },
+      //   false
+      // );
 
-      // document.getElementById('google').addEventListener('click',function(e){
+      // // and if we change this third parameter of both the codes to true, then it will behave as event capturing, and it works from top to bottom, so whenever we will click on owl image, it will first print "clicked inside the ul" and then "owl clicked"
+      // document.getElementById("images").addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log("clicked inside the ul");
+      //   },
+      //   true
+      // );
+
+      // document.getElementById("owl").addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log("owl clicked");
+      //   },
+      //   true
+      // );
+
+      // ==================================================================================
+
+      // // preventDefault() => sometimes we want an element to leave its own behaviour and it should work in a way we want. so in that scenario we want to prevent its default behaviour. for example we have link to google.com on our page, now i want that when i click it , it shouldn't open. so , we can stop it using preventDefault()
+
+      // document.getElementById("google").addEventListener(
+      //   "click",
+      //   function (e) {
       //     e.preventDefault();
-      //     e.stopPropagation()
+      //     e.stopPropagation();
       //     console.log("google clicked");
-      // }, false)
+      //   },
+      //   false
+      // );
+
+      //==================================================================================
+
+      // document.getElementById("owl").addEventListener(
+      //   "click",
+      //   function () {
+      //     alert("owl clicked again");
+      //   },
+      //   false
+      // );
+
+      // ================================================================================
+
+      // event object (e) which is passed in below function, so this event object contains various details about the event which is occuring, when we print this event object on console, we can see various properties/attributes which are attached to a particular event.
+
+      // mostly we get browser and environment events. environment events like , where button is being clicked, what was the exact location where it was clicked, what view it was, when you clicked button then what was the window height and width, also, the timestamp when button was clicked, etc.
+
+      // interview questions on the basis of event object:
+      // 1. whenever user clicks on some element on page, i should see timestamp
+      // 2. whenever user clicks anywhere on page, a circle should get created
+
+      // =================================================================================
+
+      // now i want that, when i click on image then it should be removed from page
 
       document.querySelector("#images").addEventListener("click", function (e) {
+        // // when this below approach is used to directly remove the element, then when we click outside the images , on any other list item, then all images vanish in an instance. this is because, the parent of list item is ul, and in removit, we captured ul, and then added remove() method on it, hence , all the images disappear.
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+
         console.log(e.target.tagName);
+
         if (e.target.tagName === "IMG") {
           console.log(e.target.id);
           let removeIt = e.target.parentNode;
           removeIt.remove();
         }
-      });
 
-      //removeIt.parentNode.removeChild(removeIt)
+        // removeIt.parentNode.removeChild(removeIt); => this is also one way of doing the task
+      });
     </script>
   </body>
 </html>
