@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Request</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <!-- states we have in xhr requests
+   
+      0 => unsent => client has been created. open() not called yet
+      1 => openned => open() called
+      2 => headers_received => send() has been called and headers and status are available
+      3 => loading => downloading; responseText holds partial data
+      4 => done => the operation is complete
+  
+  -->
+
+    <script>
+      // api url
+      const url = "https://api.github.com/users/creatifying121";
+
+      // making a new object of XMLHttpRequest, after making this, we get access to related properties and methods , like open() and send() method (mentioned in theory above)
+      const xhr = new XMLHttpRequest();
+
+      // requesting using open()
+      xhr.open("GET", url);
+
+      // the statuses change when request is being made, that can be seen using below loc
+      console.log(xhr.readyState); // 1 is printed
+
+      // we can track all the status change (we can track statuses continously)
+      xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+
+        // now if we know the states, then we can detect those too
+        if (xhr.readyState === 4) {
+          // console.log(responseText); // error: responseText is not defined
+
+          // console.log(this.responseText); // this doesn't give any error, because we are talking about current context and it will work only in this way
+
+          // const data = this.responseText;
+
+          // console.log(data.followers); // undefined (this is because the data we are getting from api, is in string form, not in object, so we need to convert it in json object first)
+
+          // ====================================
+
+          const data = JSON.parse(this.responseText);
+
+          console.log(data.followers); // 2 (i have got two followers)
+        }
+      };
+
+      // open() method is not called by itself, when we hit send() method then it is called
+      xhr.send();
+    </script>
+  </body>
+</html>
+
+<!-- task
+ 
+fetch photo and followers of hc and make a card
+this should happen on a button click
+
+-->
