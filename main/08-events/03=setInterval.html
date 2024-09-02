@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval</title>
+  </head>
+  <body>
+    <h1>Hello there!</h1>
+
+    <h3 id="clock"></h3>
+
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+      const clock = document.getElementById("clock");
+
+      const clockPrint = function () {
+        let date = new Date();
+
+        clock.innerHTML = date.toLocaleTimeString();
+      };
+
+      let time;
+
+      document.querySelector("#start").addEventListener("click", function () {
+        time = setInterval(clockPrint, 1000);
+      });
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(time);
+        console.log(" clock printing stopped ");
+      });
+    </script>
+  </body>
+</html>

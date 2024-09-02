@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout</title>
+  </head>
+  <body>
+    <h1>Hello there!</h1>
+    <button id="stop">STOP</button>
+
+    <script>
+      const changeH1 = function () {
+        document.querySelector("h1").innerHTML = "how're you??";
+      };
+      const changeMe = setTimeout(changeH1, 2000);
+
+      // i want to clear this timout when the button stop is clicked (before the timout expires)
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(changeMe);
+        console.log("stopped");
+      });
+    </script>
+  </body>
+</html>
