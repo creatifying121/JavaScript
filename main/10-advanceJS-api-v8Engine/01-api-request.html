@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API Request</title>
   </head>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .card-container {
+      text-align: center;
+      margin: 5rem auto;
+    }
+
+    .card {
+      border: 1px solid white;
+      border-radius: 15px;
+      width: 30%;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+
+    .card img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
+
+    .card p {
+      font-size: 20px;
+    }
+
+    .card h2 {
+      font-size: 35px;
+    }
+
+    .card button {
+      font-size: 15px;
+      padding: 12px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .card button:hover {
+      box-shadow: 5px 5px 2px #eeeaeaad;
+      border: none;
+    }
+  </style>
   <body style="background-color: #212121; color: white">
     <!-- states we have in xhr requests
    
@@ -15,6 +61,27 @@
       4 => done => the operation is complete
   
   -->
+
+    <!-- card -->
+    <div class="card-container">
+      <div class="card">
+        <img
+          id="avatar"
+          src="https://picsum.photos/800/600"
+          alt="Profile Image"
+        />
+
+        <h2>Username: <span id="username">disasterousMe</span></h2>
+        <p>Followers: <span id="followers">0</span></p>
+
+        <p style="font-size: 15px">
+          Click on the button below to see my profile
+        </p>
+
+        <button>Get my Profile</button>
+      </div>
+    </div>
+    <!-- card end -->
 
     <script>
       // api url
@@ -46,8 +113,20 @@
           // ====================================
 
           const data = JSON.parse(this.responseText);
+          console.log(data);
 
           console.log(data.followers); // 2 (i have got two followers)
+
+          // =========================================
+
+          // task
+          document
+            .querySelector("button")
+            .addEventListener("click", function () {
+              document.getElementById("avatar").src = data.avatar_url;
+              document.querySelector("#username").innerHTML = data.login;
+              document.querySelector("#followers").innerHTML = data.followers;
+            });
         }
       };
 
